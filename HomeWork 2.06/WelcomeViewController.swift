@@ -9,7 +9,7 @@ import UIKit
 
 final class WelcomeViewController: UIViewController {
 
-    @IBOutlet var accountNameField: UITextField!
+    
     @IBOutlet var logOutButton: UIButton!
     @IBOutlet var helloLable: UILabel!
     
@@ -17,7 +17,7 @@ final class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountNameField.text = accountName
+        
         helloLable.text = "Hello, " + accountName + "!"
     }
 }
