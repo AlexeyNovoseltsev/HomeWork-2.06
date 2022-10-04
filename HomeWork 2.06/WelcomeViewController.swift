@@ -19,6 +19,5 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         accountNameField.text = accountName
         helloLable.text = "Hello, " + accountName + "!"
-        
     }
 }
