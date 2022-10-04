@@ -14,6 +14,7 @@
 		C7637B5928E961DC005D984B /* HomeWork_2_06.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7637B5728E961DC005D984B /* HomeWork_2_06.xcdatamodeld */; };
 		C7637B5B28E961DE005D984B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7637B5A28E961DE005D984B /* Assets.xcassets */; };
 		C7637B5E28E961DE005D984B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7637B5C28E961DE005D984B /* LaunchScreen.storyboard */; };
+		C7637B6628E96D70005D984B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7637B6528E96D70005D984B /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C7637B5A28E961DE005D984B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7637B5D28E961DE005D984B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7637B5F28E961DE005D984B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7637B6528E96D70005D984B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C7637B5028E961DC005D984B /* SceneDelegate.swift */,
 				C7637B5228E961DC005D984B /* ViewController.swift */,
 				C7637B5428E961DC005D984B /* Main.storyboard */,
+				C7637B6528E96D70005D984B /* WelcomeViewController.swift */,
 				C7637B5A28E961DE005D984B /* Assets.xcassets */,
 				C7637B5C28E961DE005D984B /* LaunchScreen.storyboard */,
 				C7637B5F28E961DE005D984B /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7637B5928E961DC005D984B /* HomeWork_2_06.xcdatamodeld in Sources */,
+				C7637B6628E96D70005D984B /* WelcomeViewController.swift in Sources */,
 				C7637B5328E961DC005D984B /* ViewController.swift in Sources */,
 				C7637B4F28E961DC005D984B /* AppDelegate.swift in Sources */,
 				C7637B5128E961DC005D984B /* SceneDelegate.swift in Sources */,
@@ -306,9 +310,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex.HomeWork-2-06";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,9 +341,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex.HomeWork-2-06";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
