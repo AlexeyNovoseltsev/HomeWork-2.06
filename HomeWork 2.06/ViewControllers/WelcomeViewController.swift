@@ -7,17 +7,17 @@
 
 import UIKit
 
-final class WelcomeViewController: UIViewController {
-
+class WelcomeViewController: UIViewController {
     
     @IBOutlet var logOutButton: UIButton!
     @IBOutlet var helloLable: UILabel!
     
-    var accountName: String!
+    var user: User!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        helloLable.text = "Hello, " + accountName + "!"
+        super.viewDidLoad()
+        view.addVerticalGradientLayer()
+        helloLable.text = "Hello, \(user.person.fullName)!"
     }
 }

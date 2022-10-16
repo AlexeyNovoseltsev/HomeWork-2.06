@@ -7,25 +7,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
-    private let user = "User"
-    private let password = "Password"
+    private let user = User.getUserData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        nameField.autocorrectionType = .no
-        passwordField.autocorrectionType = .no
-        passwordField.isSecureTextEntry = true
+        nameField.text = user.login
+        passwordField.text = user.password
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else {return}
-        welcomeVC.accountName = nameField.text
+        guard let tabBarController = segue.destination as? UITabBarController else {
+            return
+        }
+        guard let viewControllers = tabBarController.viewControllers else {
+            return
+        }
+        
+        viewControllers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController {
+                let userInfoVC = navigationVC.topViewController
+                guard let userInfoVC = userInfoVC as? UserInfoViewController else {
+                    return
+                }
+                userInfoVC.user = user
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -34,7 +47,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginPressed() {
-        guard nameField.text == user, passwordField.text == password else {
+        guard nameField.text == user.login,
+              passwordField.text == user.password else {
             showAlert(
                 title: "Invalid login or password ⛔️",
                 message: "Please, enter correct login and password",
@@ -47,8 +61,8 @@ class ViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0 ?
-        showAlert(title: "Oops! 🥴", message: "Your name is \(user)") :
-        showAlert(title: "Oops! 🥴", message: "Your password is \(password)")
+        showAlert(title: "Oops! 🥴", message: "Your name is \(user.login)") :
+        showAlert(title: "Oops! 🥴", message: "Your password is \(user.password)")
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
